@@ -1,0 +1,15 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+.entry-content code.ap-gist-api-code {
+    background: transparent;
+    overflow: visible;
+    padding: 0;
+}
+
+.ap-file-head {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 16px;
+}
