@@ -3,13 +3,13 @@
  * included in this file.
  */
 
-.entry-content code.ap-gist-api-code {
+.entry-content code.apci-gist-api-code {
     background: transparent;
     overflow: visible;
     padding: 0;
 }
 
-.ap-file-head {
+.apci-file-head {
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     font-size: 16px;
 }

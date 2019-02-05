@@ -6,12 +6,12 @@
  *
  * @since      1.0.0
  *
- * @package    Ap_Gist_Api_Ci
- * @subpackage Ap_Gist_Api_Ci/includes
+ * @package    Apci_Gist_Api_Ci
+ * @subpackage Apci_Gist_Api_Ci/includes
  * @author     Alex Pinkevych <pinchoalex@gmail.com>
  */
 
-class Ap_Gist_Api_Nice_Response {
+class Apci_Gist_Api_Nice_Response {
 
     protected $files;
     protected $raw;
@@ -43,8 +43,8 @@ class Ap_Gist_Api_Nice_Response {
 
         if(false == $this->files) {
             return '<pre>'.
-                '<code class="ap-gist-api-code language-plaintext">'
-                .__('Can not load code by gist id, please check your shortcode and make sure gist exists', 'ap-gist-api-ci').
+                '<code class="apci-gist-api-code language-plaintext">'
+                .__('Can not load code by gist id, please check your shortcode and make sure gist exists', 'apci-gist-api-ci').
                 '</code>'.
             '</pre>';
         }
@@ -54,16 +54,16 @@ class Ap_Gist_Api_Nice_Response {
             $raw_link = '';
             if('yes' == $this->raw) {
                 $raw_link = '<a href="'.$file->raw_url.'" target="_blank" rel="nofollow"'.
-                    'title="'.__('View raw file', 'ap-gist-api-ci').'">'.
+                    'title="'.__('View raw file', 'apci-gist-api-ci').'">'.
                     $file->filename.
                 '</a>';
 
-                $raw_link = '<div class="ap-file-head">'.$raw_link.'</div>';
+                $raw_link = '<div class="apci-file-head">'.$raw_link.'</div>';
             }
 
             $html .= $raw_link.
                 '<pre class="line-numbers">'.
-                    '<code class="ap-gist-api-code language-'.strtolower($file->language).'">'
+                    '<code class="apci-gist-api-code language-'.strtolower($file->language).'">'
                     .esc_html($file->content).
                     '</code>'.
                 '</pre>';

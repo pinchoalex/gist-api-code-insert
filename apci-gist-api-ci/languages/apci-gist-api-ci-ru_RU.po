@@ -1,19 +1,20 @@
-#, fuzzy
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Gist API Code insert\n"
-"POT-Creation-Date: 2019-02-04 21:30+0300\n"
-"PO-Revision-Date: 2019-02-04 21:30+0300\n"
+"POT-Creation-Date: 2019-02-05 16:39+0300\n"
+"PO-Revision-Date: 2019-02-05 16:41+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "X-Generator: Poedit 2.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
-"X-Poedit-WPHeader: ap-gist-api-ci.php\n"
+"X-Poedit-WPHeader: apci-gist-api-ci.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
@@ -23,56 +24,60 @@ msgstr ""
 
 #: admin/editor/insert-btn-modal.php:6
 msgid "Insert Gist API shortcode"
-msgstr ""
+msgstr "Добавить Gist API шорткод"
 
 #: admin/editor/insert-btn-modal.php:55
 msgid "Required Field!"
-msgstr ""
+msgstr "Обязательное поле!"
 
 #: admin/editor/insert-btn-modal.php:67
 msgid "Gist ID"
-msgstr ""
+msgstr "Gist ID"
 
 #: admin/editor/insert-btn-modal.php:71
 msgid "File name"
-msgstr ""
+msgstr "Имя файла"
 
 #: admin/editor/insert-btn-modal.php:75
 msgid "Raw file link"
-msgstr ""
+msgstr "Ссылка оригинальный файл"
 
 #: admin/editor/insert-btn-modal.php:77
 msgid "Yes"
-msgstr ""
+msgstr "Да"
 
 #: admin/editor/insert-btn-modal.php:78
 msgid "No"
-msgstr ""
+msgstr "Нет"
 
 #: admin/editor/insert-btn-modal.php:82
 msgid "Insert shortcode"
-msgstr ""
+msgstr "Добавить шорткод"
 
-#: includes/class-ap-gist-api-nice-response.php:47
+#: includes/class-apci-gist-api-nice-response.php:47
 msgid ""
 "Can not load code by gist id, please check your shortcode and make sure gist "
 "exists"
 msgstr ""
+"Не получается загрузить код по Gist id, пожалуйста проверьте параметры "
+"шорткода и что Gist существует"
 
-#: includes/class-ap-gist-api-nice-response.php:57
+#: includes/class-apci-gist-api-nice-response.php:57
 msgid "View raw file"
-msgstr ""
+msgstr "Смотреть в оригинале"
 
 #. Plugin Name of the plugin/theme
-msgid "Gist API Code insert"
-msgstr ""
+msgid "Apci Gist API Code insert"
+msgstr "Apci Gist API Code insert"
 
 #. Description of the plugin/theme
 msgid ""
 "Inserts Github Gist code directly in to your posts via shortcode without "
 "using js embed script"
 msgstr ""
+"Добавляет Github Gist код напрямую в ваши посты через Gist API без "
+"использования script тега"
 
 #. Author of the plugin/theme
 msgid "Alex Pinkevych"
-msgstr ""
+msgstr "Александр Пинкевич"

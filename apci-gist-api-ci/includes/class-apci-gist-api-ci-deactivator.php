@@ -5,8 +5,8 @@
  *
  * @since      1.0.0
  *
- * @package    Ap_Gist_Api_Ci
- * @subpackage Ap_Gist_Api_Ci/includes
+ * @package    Apci_Gist_Api_Ci
+ * @subpackage Apci_Gist_Api_Ci/includes
  */
 
 /**
@@ -15,11 +15,11 @@
  * This class defines all code necessary to run during the plugin's deactivation.
  *
  * @since      1.0.0
- * @package    Ap_Gist_Api_Ci
- * @subpackage Ap_Gist_Api_Ci/includes
+ * @package    Apci_Gist_Api_Ci
+ * @subpackage Apci_Gist_Api_Ci/includes
  * @author     Alex Pinkevych <pinchoalex@gmail.com>
  */
-class Ap_Gist_Api_Ci_Deactivator {
+class Apci_Gist_Api_Ci_Deactivator {
 
 	/**
 	 * Short Description. (use period)

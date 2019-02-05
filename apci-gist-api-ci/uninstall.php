@@ -21,7 +21,7 @@
  *
  * @since      1.0.0
  *
- * @package    Ap_Gist_Api_Ci
+ * @package    Apci_Gist_Api_Ci
  */
 
 // If uninstall not called from WordPress, then exit.

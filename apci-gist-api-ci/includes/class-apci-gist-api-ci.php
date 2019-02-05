@@ -8,8 +8,8 @@
  *
  * @since      1.0.0
  *
- * @package    Ap_Gist_Api_Ci
- * @subpackage Ap_Gist_Api_Ci/includes
+ * @package    Apci_Gist_Api_Ci
+ * @subpackage Apci_Gist_Api_Ci/includes
  */
 
 /**
@@ -22,11 +22,11 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    Ap_Gist_Api_Ci
- * @subpackage Ap_Gist_Api_Ci/includes
+ * @package    Apci_Gist_Api_Ci
+ * @subpackage Apci_Gist_Api_Ci/includes
  * @author     Alex Pinkevych <pinchoalex@gmail.com>
  */
-class Ap_Gist_Api_Ci {
+class Apci_Gist_Api_Ci {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -34,7 +34,7 @@ class Ap_Gist_Api_Ci {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      Ap_Gist_Api_Ci_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      Apci_Gist_Api_Ci_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -66,12 +66,12 @@ class Ap_Gist_Api_Ci {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'PLUGIN_NAME_VERSION' ) ) {
-			$this->version = PLUGIN_NAME_VERSION;
+		if ( defined( 'APCI_PLUGIN_NAME_VERSION' ) ) {
+			$this->version = APCI_PLUGIN_NAME_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
-		$this->plugin_name = 'ap-gist-api-ci';
+		$this->plugin_name = 'apci-gist-api-ci';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -85,10 +85,10 @@ class Ap_Gist_Api_Ci {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - Ap_Gist_Api_Ci_Loader. Orchestrates the hooks of the plugin.
-	 * - Ap_Gist_Api_Ci_i18n. Defines internationalization functionality.
-	 * - Ap_Gist_Api_Ci_Admin. Defines all hooks for the admin area.
-	 * - Ap_Gist_Api_Ci_Public. Defines all hooks for the public side of the site.
+	 * - Apci_Gist_Api_Ci_Loader. Orchestrates the hooks of the plugin.
+	 * - Apci_Gist_Api_Ci_i18n. Defines internationalization functionality.
+	 * - Apci_Gist_Api_Ci_Admin. Defines all hooks for the admin area.
+	 * - Apci_Gist_Api_Ci_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -102,32 +102,32 @@ class Ap_Gist_Api_Ci {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-ap-gist-api-ci-loader.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-apci-gist-api-ci-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-ap-gist-api-ci-i18n.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-apci-gist-api-ci-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-ap-gist-api-ci-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-apci-gist-api-ci-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-ap-gist-api-ci-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-apci-gist-api-ci-public.php';
 
-		$this->loader = new Ap_Gist_Api_Ci_Loader();
+		$this->loader = new Apci_Gist_Api_Ci_Loader();
 	}
 
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the Ap_Gist_Api_Ci_i18n class in order to set the domain and to register the hook
+	 * Uses the Apci_Gist_Api_Ci_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
@@ -135,7 +135,7 @@ class Ap_Gist_Api_Ci {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Ap_Gist_Api_Ci_i18n();
+		$plugin_i18n = new Apci_Gist_Api_Ci_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -150,7 +150,7 @@ class Ap_Gist_Api_Ci {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Ap_Gist_Api_Ci_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new Apci_Gist_Api_Ci_Admin( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -166,7 +166,7 @@ class Ap_Gist_Api_Ci {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Ap_Gist_Api_Ci_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new Apci_Gist_Api_Ci_Public( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
@@ -197,7 +197,7 @@ class Ap_Gist_Api_Ci {
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
-	 * @return    Ap_Gist_Api_Ci_Loader    Orchestrates the hooks of the plugin.
+	 * @return    Apci_Gist_Api_Ci_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;
@@ -214,14 +214,14 @@ class Ap_Gist_Api_Ci {
 	}
 
     public function add_buttons() {
-        $plugin_admin = new Ap_Gist_Api_Ci_Admin( $this->get_plugin_name(), $this->get_version() );
-        $plugin_public = new Ap_Gist_Api_Ci_Public( $this->get_plugin_name(), $this->get_version() );
+        $plugin_admin = new Apci_Gist_Api_Ci_Admin( $this->get_plugin_name(), $this->get_version() );
+        $plugin_public = new Apci_Gist_Api_Ci_Public( $this->get_plugin_name(), $this->get_version() );
 
         $this->loader->add_filter('mce_external_plugins', $plugin_admin, 'add_code_insert_btn_script');
         $this->loader->add_filter('mce_buttons', $plugin_admin, 'add_code_insert_btn');
 
-        $this->loader->add_action('wp_ajax_ap_code_insert_btn_modal', $plugin_admin, 'code_insert_btn_modal');
+        $this->loader->add_action('wp_ajax_apci_code_insert_btn_modal', $plugin_admin, 'code_insert_btn_modal');
 
-        add_shortcode('apCI', array($plugin_public, 'ap_code_insert_from_gist_api'));
+        add_shortcode('apCI', array($plugin_public, 'apci_code_insert_from_gist_api'));
     }
 }

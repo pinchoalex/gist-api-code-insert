@@ -5,8 +5,8 @@
  *
  * @since      1.0.0
  *
- * @package    Ap_Gist_Api_Ci
- * @subpackage Ap_Gist_Api_Ci/admin
+ * @package    Apci_Gist_Api_Ci
+ * @subpackage Apci_Gist_Api_Ci/admin
  */
 
 /**
@@ -15,11 +15,11 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the admin-specific stylesheet and JavaScript.
  *
- * @package    Ap_Gist_Api_Ci
- * @subpackage Ap_Gist_Api_Ci/admin
+ * @package    Apci_Gist_Api_Ci
+ * @subpackage Apci_Gist_Api_Ci/admin
  * @author     Alex Pinkevych <pinchoalex@gmail.com>
  */
-class Ap_Gist_Api_Ci_Admin {
+class Apci_Gist_Api_Ci_Admin {
 
 	/**
 	 * The ID of this plugin.
@@ -64,15 +64,15 @@ class Ap_Gist_Api_Ci_Admin {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Ap_Gist_Api_Ci_Loader as all of the hooks are defined
+		 * defined in Apci_Gist_Api_Ci_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Ap_Gist_Api_Ci_Loader will then create the relationship
+		 * The Apci_Gist_Api_Ci_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/ap-gist-api-ci-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/apci-gist-api-ci-admin.css', array(), $this->version, 'all' );
 
 	}
 
@@ -87,15 +87,15 @@ class Ap_Gist_Api_Ci_Admin {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Ap_Gist_Api_Ci_Loader as all of the hooks are defined
+		 * defined in Apci_Gist_Api_Ci_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Ap_Gist_Api_Ci_Loader will then create the relationship
+		 * The Apci_Gist_Api_Ci_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/ap-gist-api-ci-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/apci-gist-api-ci-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
 
@@ -105,9 +105,10 @@ class Ap_Gist_Api_Ci_Admin {
      */
     public function add_code_insert_btn($buttons) {
         $newBtn = array(
-            'apCodeInsertBtn'
+            'apciCodeInsertBtn'
         );
         $buttons = array_merge( $buttons, $newBtn );
+
         return $buttons;
     }
 
@@ -116,7 +117,7 @@ class Ap_Gist_Api_Ci_Admin {
      * @return mixed
      */
     public function add_code_insert_btn_script($plugin_array) {
-        $plugin_array['apCodeInsertBtn'] = plugins_url( $this->plugin_name.'/admin/editor/ap-code-insert-btn.js' );
+        $plugin_array['apciCodeInsertBtn'] = plugins_url( $this->plugin_name.'/admin/editor/apci-code-insert-btn.js' );
         return $plugin_array;
     }
 

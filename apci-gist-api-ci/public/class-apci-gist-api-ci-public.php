@@ -5,8 +5,8 @@
  *
  * @since      1.0.0
  *
- * @package    Ap_Gist_Api_Ci
- * @subpackage Ap_Gist_Api_Ci/public
+ * @package    Apci_Gist_Api_Ci
+ * @subpackage Apci_Gist_Api_Ci/public
  */
 
 /**
@@ -15,11 +15,11 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the public-facing stylesheet and JavaScript.
  *
- * @package    Ap_Gist_Api_Ci
- * @subpackage Ap_Gist_Api_Ci/public
+ * @package    Apci_Gist_Api_Ci
+ * @subpackage Apci_Gist_Api_Ci/public
  * @author     Alex Pinkevych <pinchoalex@gmail.com>
  */
-class Ap_Gist_Api_Ci_Public {
+class Apci_Gist_Api_Ci_Public {
 
 	/**
 	 * The ID of this plugin.
@@ -69,16 +69,16 @@ class Ap_Gist_Api_Ci_Public {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Ap_Gist_Api_Ci_Loader as all of the hooks are defined
+		 * defined in Apci_Gist_Api_Ci_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Ap_Gist_Api_Ci_Loader will then create the relationship
+		 * The Apci_Gist_Api_Ci_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
 		wp_enqueue_style( 'prism-css', plugin_dir_url( __FILE__ ) . 'css/prism.css', array(), $this->version, 'all' );
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/ap-gist-api-ci-public.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/apci-gist-api-ci-public.css', array(), $this->version, 'all' );
 
 	}
 
@@ -93,16 +93,16 @@ class Ap_Gist_Api_Ci_Public {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Ap_Gist_Api_Ci_Loader as all of the hooks are defined
+		 * defined in Apci_Gist_Api_Ci_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Ap_Gist_Api_Ci_Loader will then create the relationship
+		 * The Apci_Gist_Api_Ci_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
 		wp_enqueue_script( 'prism-js', plugin_dir_url( __FILE__ ) . 'js/prism.js', array( 'jquery' ), $this->version, false );
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/ap-gist-api-ci-public.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/apci-gist-api-ci-public.js', array( 'jquery' ), $this->version, false );
 
 	}
 
@@ -110,20 +110,20 @@ class Ap_Gist_Api_Ci_Public {
      * load public dependencies
      */
     private function load_dependencies() {
-        require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-ap-gist-api-request.php';
+        require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-apci-gist-api-request.php';
 
-        $this->gist_api_request = new Ap_Gist_Api_Request();
+        $this->gist_api_request = new Apci_Gist_Api_Request();
 
-        require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-ap-gist-api-nice-response.php';
+        require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-apci-gist-api-nice-response.php';
 
-        $this->gist_api_response = new Ap_Gist_Api_Nice_Response();
+        $this->gist_api_response = new Apci_Gist_Api_Nice_Response();
     }
 
     /**
      * @param $atts
      * @return mixed
      */
-	public function ap_code_insert_from_gist_api($atts)
+	public function Apci_code_insert_from_gist_api($atts)
     {
         extract( shortcode_atts( array(
             'id' => '',

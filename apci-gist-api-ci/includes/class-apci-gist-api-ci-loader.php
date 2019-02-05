@@ -5,8 +5,8 @@
  *
  * @since      1.0.0
  *
- * @package    Ap_Gist_Api_Ci
- * @subpackage Ap_Gist_Api_Ci/includes
+ * @package    Apci_Gist_Api_Ci
+ * @subpackage Apci_Gist_Api_Ci/includes
  */
 
 /**
@@ -16,11 +16,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Ap_Gist_Api_Ci
- * @subpackage Ap_Gist_Api_Ci/includes
+ * @package    Apci_Gist_Api_Ci
+ * @subpackage Apci_Gist_Api_Ci/includes
  * @author     Alex Pinkevych <pinchoalex@gmail.com>
  */
-class Ap_Gist_Api_Ci_Loader {
+class Apci_Gist_Api_Ci_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.

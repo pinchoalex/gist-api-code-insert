@@ -1,19 +1,19 @@
 (function() {
-    tinymce.create('tinymce.plugins.ApGistAPICodeInsert', {
+    tinymce.create('tinymce.plugins.ApciGistAPICodeInsert', {
         init: function(ed, url) {
-            ed.addCommand('apCodeInsertBtnCommand', function() {
+            ed.addCommand('apciCodeInsertBtnCommand', function() {
                 ed.windowManager.open({
                     title: 'Insert Gist API shortcode',
-                    file: ajaxurl + '?action=ap_code_insert_btn_modal',
+                    file: ajaxurl + '?action=apci_code_insert_btn_modal',
                     inline: 1
                 }, {
                     plugin_url: url
                 });
             });
-            ed.addButton('apCodeInsertBtn', {
+            ed.addButton('apciCodeInsertBtn', {
                 title: 'Insert Gist code',
                 image: url + '/github.png',
-                cmd: 'apCodeInsertBtnCommand'
+                cmd: 'apciCodeInsertBtnCommand'
             });
         },
         getInfo: function() {
@@ -27,5 +27,5 @@
         }
     });
 
-    tinymce.PluginManager.add('apCodeInsertBtn', tinymce.plugins.ApGistAPICodeInsert);
+    tinymce.PluginManager.add('apciCodeInsertBtn', tinymce.plugins.ApciGistAPICodeInsert);
 })();
